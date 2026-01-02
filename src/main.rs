@@ -4,9 +4,9 @@ fn main() {
 
     let crankshaft_string :&str = "57.881234";
     let bearing_string :&str = "57.929012";
-    let crankshaft :Decimal = Decimal::from_str_exact(crankshaft_string).unwrap();
-    let bearing :Decimal = Decimal::from_str_exact(bearing_string).unwrap();
-    let gap :Decimal = bearing - crankshaft;
+    let crankshaft_decimal :Decimal = Decimal::from_str_exact(crankshaft_string).unwrap();
+    let bearing_decimal :Decimal = Decimal::from_str_exact(bearing_string).unwrap();
+    let gap :Decimal = bearing_decimal - crankshaft_decimal;
 
     let gap_cent :Decimal = gap.round_dp(2);
     let gap_mil :Decimal = gap.round_dp(3);
