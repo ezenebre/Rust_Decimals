@@ -1,10 +1,11 @@
 use rust_decimal::Decimal;
-use rust_decimal_macros::dec;
 
 fn main() {
 
-    let crankshaft :Decimal = dec!(57.881234);
-    let bearing :Decimal = dec!(57.929012);
+    let crankshaft_string :&str = "57.881234";
+    let bearing_string :&str = "57.929012";
+    let crankshaft :Decimal = Decimal::from_str_exact(crankshaft_string).unwrap();
+    let bearing :Decimal = Decimal::from_str_exact(bearing_string).unwrap();
     let gap :Decimal = bearing - crankshaft;
 
     let gap_cent :Decimal = gap.round_dp(2);
